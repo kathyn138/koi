@@ -4,11 +4,19 @@
 # name of the character.
 
 define e = Character("Eileen")
-
+define pov = Character("[povname]")
 
 # The game starts here.
 
 label start:
+    python:
+        povname = renpy.input("What is your name?", length=32)
+        povname = povname.strip()
+
+        if not povname:
+            povname = "Deez nuts"
+
+    pov "My name is [povname]!"
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -24,19 +32,19 @@ label start:
 
     # These display lines of dialogue.
 
-    e "My name is Y/N!"
+    "My name is Y/N!"
 
-    e "I live in Tokyo and have the sweetest girlfriend. Her name is Ai."
+    "I live in Tokyo and have the sweetest girlfriend. Her name is Ai."
 
-    e "I cherish her with all my heart."
+    "I cherish her with all my heart."
 
-    e "Though, Ai doesn’t live in Tokyo with me. In fact, I only see her once a month. :("
+    "Though, Ai doesn’t live in Tokyo with me. In fact, I only see her once a month. :("
 
-    e "Ai was amazing and surprised me with a robot version of herself!"
+    "Ai was amazing and surprised me with a robot version of herself!"
 
-    e "Now I’ll always have her with me ❤️"
+    "Now I’ll always have her with me ❤️"
 
-    e "My life is going to be great."
+    "My life is going to be great."
 
     # This ends the game.
 
